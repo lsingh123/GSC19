@@ -63,7 +63,6 @@ In the SPARQL Endpoint field, type `/testwn/query`
 
 This query will return all metadata for the news source with URL <nytimes.com>. 
 
-<code>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -95,7 +94,6 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
       ?item wnp:haspath ?path .}
   }
 }
-  </code>
 
 To add a different url, change the portion inside the asterixes. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
 
@@ -103,7 +101,6 @@ If you don’t know the exact URL we have stored in our database:
 
 If you’re looking for a URL and it’s not coming up, it may be in the database in a different form. Try using this query instead. Warning: This query is slower so only use it if the one before isn’t working:
 
-<code>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -134,14 +131,12 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
   }
   FILTER regex (str(?g), "**cnn**")
 }
- </code>
 
 The highlighted text is the value that you think should be contained in the url. (Running this query will show that there’s a lot of cleaning work left to be done)
 To find sources for a specific country:
 
 This query will return urls of all the sources for the country with wikidata code Q16 (Canada).
 
-<code>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -162,7 +157,6 @@ WHERE
   { GRAPH ?g
       { } 
   }
- </code>
  
  ## Updating
  
@@ -170,7 +164,6 @@ In the SPARQL endpoint field, type: /testwn/update
 
 # To insert a new entry without overwriting existing metadata:
 
-<code>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -178,7 +171,6 @@ PREFIX wni: <http://worldnews/item/>
 INSERT {
   GRAPH <http://www.cnn.com> {<http://www.cnn.com/item> wdt:P17 wd:Q30 }  }
 WHERE {FILTER (NOT EXISTS {GRAPH <http://www.cnn.com> {?item wdt:P17 ?country}})} ;
-</code>
 
 You can also use this query to add additional metadata to an existing source. 
 
