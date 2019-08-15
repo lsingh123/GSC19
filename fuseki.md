@@ -103,6 +103,7 @@ If you don’t know the exact URL we have stored in our database:
 
 If you’re looking for a URL and it’s not coming up, it may be in the database in a different form. Try using this query instead. Warning: This query is slower so only use it if the one before isn’t working:
 
+```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -131,34 +132,36 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
     OPTIONAL {
       ?item wnp:paywalled ?paywall .}
   }
-  FILTER regex (str(?g), "**cnn**")
+  FILTER regex (str(?g), "*cnn*")
 }
-
-The highlighted text is the value that you think should be contained in the url. (Running this query will show that there’s a lot of cleaning work left to be done)
+```
+The text inside asterixes is the value that you think should be contained in the url. (Running this query will show that there’s a lot of cleaning work left to be done)
 To find sources for a specific country:
 
 This query will return urls of all the sources for the country with wikidata code Q16 (Canada).
 
+```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
 PREFIX wni: <http://worldnews/item/>
 SELECT ?url 
 { GRAPH ?g {
-      ?item wdt:P17 wd:**Q16** .
+      ?item wdt:P17 wd:*Q16* .
       ?item wdt:1896 ?url . 
   }
 }
-</code>
+```
 
 To count how many sources we have:
 
-<code>
+```
 SELECT (COUNT(*) as ?count) 
 WHERE 
   { GRAPH ?g
       { } 
   }
+ ```
  
  ## Updating
  
@@ -166,6 +169,7 @@ In the SPARQL endpoint field, type: /testwn/update
 
 # To insert a new entry without overwriting existing metadata:
 
+```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -173,6 +177,7 @@ PREFIX wni: <http://worldnews/item/>
 INSERT {
   GRAPH <http://www.cnn.com> {<http://www.cnn.com/item> wdt:P17 wd:Q30 }  }
 WHERE {FILTER (NOT EXISTS {GRAPH <http://www.cnn.com> {?item wdt:P17 ?country}})} ;
+```
 
 You can also use this query to add additional metadata to an existing source. 
 
