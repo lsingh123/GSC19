@@ -63,6 +63,7 @@ In the SPARQL Endpoint field, type `/testwn/query`
 
 This query will return all metadata for the news source with URL <nytimes.com>. 
 
+```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
@@ -94,6 +95,7 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
       ?item wnp:haspath ?path .}
   }
 }
+```
 
 To add a different url, change the portion inside the asterixes. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
 
