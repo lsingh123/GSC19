@@ -25,6 +25,8 @@ I wrote about the project's goals in a blog post that will be published on the I
 - set up a local database to host the data: INSERT LINK
 - created visualizations of the data: INSERT LINK
 
+As part of this project, I set up a local Apache Jena Fuseki databse to store the data. See my [Fuseki starter pack](https://lsingh123.github.io/gsoc19/fuseki) for more information.
+
 ## IA Web Meter
 
 As an "extra credit" project, I also did some very basic proof of concept work to create visualizations of the data produced by IA Web Meter, an API to access internal metrics of the Wayback Machine. This code is nowhere near operationalized or clean. It is a very rough proof of concept. Code can be found [here](https://github.com/lsingh123/ia_webmeter_viz)
