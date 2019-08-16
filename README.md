@@ -35,6 +35,5 @@ As an "extra credit" project, I also did some very basic proof of concept work t
 
 I also helped manage work on the Mueller Report project briefly. The goal of this project was to add links to all the references in the Mueller Report. Here's a [blog post](https://blog.archive.org/2019/07/19/the-mueller-report-now-with-linked-footnotes-and-accessible/) detailing our efforts. 
 
-I wrote a quick scraper to grab all the links and metadata from the NYT version of the Mueller report as a starting point. Here is the [code](https://github.com/lsingh123/mueller_report) for that. https://github.com/lsingh123/mueller_report
-
+I wrote a quick scraper to grab all the links and metadata from the NYT version of the Mueller report as a starting point. Here is the [code](https://github.com/lsingh123/mueller_report) for that.
 
