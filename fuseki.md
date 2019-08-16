@@ -54,7 +54,9 @@ sudo service ferm reload
 
 Additional resources:
 [Jena Documentation Download Instructions](https://jena.apache.org/download/)
+
 [JDK download instructions](https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-linux-platforms.htm#JSJIG-GUID-19D58769-FD72-4353-A935-40FCD82A7A81)
+
 [Wiki on Exposing a Port to the Outside World](https://docs.google.com/document/d/1k41bw2D32_1DqnpPBmu_E4RdOuewppOPn7CjKA6dFhU/edit#)
 
 ## Query Instructions
@@ -112,7 +114,7 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
 
 To add a different url, change the portion inside the asterixes. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
 
-If you don’t know the exact URL we have stored in our database:
+### If you don’t know the exact URL we have stored in our database:
 
 If you’re looking for a URL and it’s not coming up, it may be in the database in a different form. Try using this query instead. Warning: This query is slower so only use it if the one before isn’t working:
 
@@ -149,7 +151,8 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
 }
 ```
 The text inside asterixes is the value that you think should be contained in the url. (Running this query will show that there’s a lot of cleaning work left to be done)
-To find sources for a specific country:
+
+### To find sources for a specific country:
 
 This query will return urls of all the sources for the country with wikidata code Q16 (Canada).
 
@@ -166,7 +169,7 @@ SELECT ?url
 }
 ```
 
-To count how many sources we have:
+### To count how many sources we have:
 
 ```
 SELECT (COUNT(*) as ?count) 
@@ -180,7 +183,7 @@ WHERE
  
 In the SPARQL endpoint field, type: /testwn/update
 
-# To insert a new entry without overwriting existing metadata:
+### To insert a new entry without overwriting existing metadata:
 
 ```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -194,7 +197,7 @@ WHERE {FILTER (NOT EXISTS {GRAPH <http://www.cnn.com> {?item wdt:P17 ?country}})
 
 You can also use this query to add additional metadata to an existing source. 
 
-# To automate adding sources:
+### To automate adding sources:
 
 Look at the scripts in [this](https://github.com/lsingh123/GSC2019worldnewsproject) repo, specifically `feed_fuseki.py`
 
