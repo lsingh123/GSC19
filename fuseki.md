@@ -2,31 +2,31 @@
 
 ## Setup
 
-1. The host machine must have JDK installed and set up. If JDK is already set up, then skip ahead to Step 3. To check if you have JDK, run:
+(1) The host machine must have JDK installed and set up. If JDK is already set up, then skip ahead to Step 3. To check if you have JDK, run:
 
 ```
 java -version
 ```
 
-2. Install JDK:
+(2) Install JDK:
 
 ```
 sudo apt install default-jdk
 ```
 
-3. Download fuseki with:
+(3) Download fuseki with:
 
 ```
 wget "https://mirrors.koehn.com/apache/jena/binaries/apache-jena-fuseki-3.12.0.tar.gz"
 ```
 
-4. Unzip the tarball:
+(4) Unzip the tarball:
 
 ```
 tar -xvzf apache-jena-fuseki-3.12.0.tar.gz
 ```
 
-5. To start the server, run: 
+(5) To start the server, run: 
 
 ```
 cd apache-jena-fuseki-3.12.0
@@ -40,7 +40,7 @@ To stop the server run:
 kill `ps -ef | grep 'java.*fuseki' | grep -v grep | awk '{ print $2 }'`
 ```
 
-6. The server will run on Port 3030. To expose port 3030 to the outside world:
+(6) The server will run on Port 3030. To expose port 3030 to the outside world:
 
 - drop a fragment into /etc/ferm/input: 
 ```
@@ -196,7 +196,7 @@ You can also use this query to add additional metadata to an existing source.
 
 # To automate adding sources:
 
-Look at the scripts in this repo, specifically `feed_fuseki.py`: https://github.com/lsingh123/GSC2019worldnewsproject
+Look at the scripts in [this](https://github.com/lsingh123/GSC2019worldnewsproject) repo, specifically `feed_fuseki.py`
 
 ## Additional Resources
 
