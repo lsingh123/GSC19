@@ -1,4 +1,4 @@
-# fuseki
+# Fuseki Starter Pack
 
 ## Setup
 
