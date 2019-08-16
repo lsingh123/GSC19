@@ -4,19 +4,27 @@
 
 1. The host machine must have JDK installed and set up. If JDK is already set up, then skip ahead to Step 3. To check if you have JDK, run:
 
-`java -version`
+```
+java -version
+```
 
 2. Install JDK:
 
-`sudo apt install default-jdk`
+```
+sudo apt install default-jdk
+```
 
 3. Download fuseki with:
 
-`wget "https://mirrors.koehn.com/apache/jena/binaries/apache-jena-fuseki-3.12.0.tar.gz"`
+```
+wget "https://mirrors.koehn.com/apache/jena/binaries/apache-jena-fuseki-3.12.0.tar.gz"
+```
 
 4. Unzip the tarball:
 
-`tar -xvzf apache-jena-fuseki-3.12.0.tar.gz`
+```
+tar -xvzf apache-jena-fuseki-3.12.0.tar.gz
+```
 
 5. To start the server, run: 
 
@@ -35,9 +43,14 @@ kill `ps -ef | grep 'java.*fuseki' | grep -v grep | awk '{ print $2 }'`
 6. The server will run on Port 3030. To expose port 3030 to the outside world:
 
 - drop a fragment into /etc/ferm/input: 
-`proto tcp dport 3030 ACCEPT;`
+```
+proto tcp dport 3030 ACCEPT;
+```
 
-- run `sudo service ferm reload`
+- run 
+```
+sudo service ferm reload
+```
 
 Additional resources:
 [Jena Documentation Download Instructions](https://jena.apache.org/download/)
