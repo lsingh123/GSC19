@@ -62,9 +62,9 @@ Additional resources:
 ## Query Instructions
 
 Datasets can be found here:
-http://lavanya-dev.us.archive.org:3030/dataset.html
+http://wwwb-db01.us.archive.org:3030/dataset.html
 
-Please use the /testwn database. The others are either empty or outdated. 
+Please use the /wn database. The others are either empty or outdated. 
 
 Please only adjust the highlighted portions of the query, otherwise it is likely to break. The http:// is NECESSARY before each url or your query will break. The /item after subject URIs within each graph is also necessary. 
 
@@ -72,7 +72,7 @@ If you try to download all the sources in the database, the query will take a LO
 
 ## Querying
 
-In the SPARQL Endpoint field, type `/testwn/query`
+In the SPARQL Endpoint field, type `/wn/query`
 
 ### If you know the exact URL we have stored in our database: 
 
@@ -181,7 +181,7 @@ WHERE
  
  ## Updating
  
-In the SPARQL endpoint field, type: /testwn/update
+In the SPARQL endpoint field, type: `/wn/update`
 
 ### To insert a new entry without overwriting existing metadata:
 
