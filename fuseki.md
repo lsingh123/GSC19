@@ -148,7 +148,7 @@ Look at the scripts in [this](https://github.com/lsingh123/GSC2019worldnewsproje
 
 ## Notes
 
-1. Each news source has its own graph (GRAPH `http://www.nytimes.com` for example). Within that graph there are triples of the format `item property object`. 
+1. Each news source has its own graph (`GRAPH <http://www.nytimes.com>` for example). Within that graph there are triples of the format `ITEM PROPERTY OBJECT`. 
 2. For some countries, there was trouble finding the correct wikidata code. If I couldn't find the correct country code, I just used the name of the country (no spaces or capitalization) as the object of the country triple. If you're struggling to find news sources for a particular country, try filtering as below (replacing `country` with the country of interest) instead of looking for the exact wikidata country code:
 ` FILTER regex (str(?country), "country") `
 
