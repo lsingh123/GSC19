@@ -1,64 +1,5 @@
 # Fuseki Starter Pack
 
-## Setup
-
-(1) The host machine must have JDK installed and set up. If JDK is already set up, then skip ahead to Step 3. To check if you have JDK, run:
-
-```
-java -version
-```
-
-(2) Install JDK:
-
-```
-sudo apt install default-jdk
-```
-
-(3) Download fuseki with:
-
-```
-wget "https://mirrors.koehn.com/apache/jena/binaries/apache-jena-fuseki-3.12.0.tar.gz"
-```
-
-(4) Unzip the tarball:
-
-```
-tar -xvzf apache-jena-fuseki-3.12.0.tar.gz
-```
-
-(5) To start the server, run: 
-
-```
-cd apache-jena-fuseki-3.12.0
- 
-./fuseki-server --update --mem /d 
-```
-
-To stop the server run: 
-
-```
-kill `ps -ef | grep 'java.*fuseki' | grep -v grep | awk '{ print $2 }'`
-```
-
-(6) The server will run on Port 3030. To expose port 3030 to the outside world:
-
-- drop a fragment into /etc/ferm/input: 
-```
-proto tcp dport 3030 ACCEPT;
-```
-
-- run 
-```
-sudo service ferm reload
-```
-
-Additional resources:
-[Jena Documentation Download Instructions](https://jena.apache.org/download/)
-
-[JDK download instructions](https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-linux-platforms.htm#JSJIG-GUID-19D58769-FD72-4353-A935-40FCD82A7A81)
-
-[Wiki on Exposing a Port to the Outside World](https://docs.google.com/document/d/1k41bw2D32_1DqnpPBmu_E4RdOuewppOPn7CjKA6dFhU/edit#)
-
 ## Query Instructions
 
 Datasets can be found here:
@@ -211,7 +152,70 @@ Look at the scripts in [this](https://github.com/lsingh123/GSC2019worldnewsproje
 
 [Wikidata Query Service](https://query.wikidata.org/) (really good resource to practice SPARQL queries)
 
+## Notes
 
+1. Each news source has its own graph (GRAPH `http://www.nytimes.com` for example). Within that graph there are triples of the format `item property object`. 
+2. For some countries, there was trouble finding the correct wikidata code. If I couldn't find the correct country code, I just used the name of the country (no spaces or capitalization) as the object of the country triple. If you're struggling to find news sources for a particular country, try filtering as below (replacing `country` with the country of interest) instead of looking for the exact wikidata country code:
+` FILTER regex (str(?country), "country") `
+
+## Setup
+
+(1) The host machine must have JDK installed and set up. If JDK is already set up, then skip ahead to Step 3. To check if you have JDK, run:
+
+```
+java -version
+```
+
+(2) Install JDK:
+
+```
+sudo apt install default-jdk
+```
+
+(3) Download fuseki with:
+
+```
+wget "https://mirrors.koehn.com/apache/jena/binaries/apache-jena-fuseki-3.12.0.tar.gz"
+```
+
+(4) Unzip the tarball:
+
+```
+tar -xvzf apache-jena-fuseki-3.12.0.tar.gz
+```
+
+(5) To start the server, run: 
+
+```
+cd apache-jena-fuseki-3.12.0
+ 
+./fuseki-server --update --mem /d 
+```
+
+To stop the server run: 
+
+```
+kill `ps -ef | grep 'java.*fuseki' | grep -v grep | awk '{ print $2 }'`
+```
+
+(6) The server will run on Port 3030. To expose port 3030 to the outside world:
+
+- drop a fragment into /etc/ferm/input: 
+```
+proto tcp dport 3030 ACCEPT;
+```
+
+- run 
+```
+sudo service ferm reload
+```
+
+Additional resources:
+[Jena Documentation Download Instructions](https://jena.apache.org/download/)
+
+[JDK download instructions](https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-linux-platforms.htm#JSJIG-GUID-19D58769-FD72-4353-A935-40FCD82A7A81)
+
+[Wiki on Exposing a Port to the Outside World](https://docs.google.com/document/d/1k41bw2D32_1DqnpPBmu_E4RdOuewppOPn7CjKA6dFhU/edit#)
 
 
 
