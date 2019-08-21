@@ -80,7 +80,7 @@ SELECT DISTINCT ?url ?country ?title ?language ?type ?description ?title_native 
 }
 ```
 
-To add a different url, change the portion after http://. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
+To add a different url, change the portion after `http://`. Please make sure to include `http://` before the canonicalized form of the URL. If your query isn’t working, try this next one.
 
 ### If you don’t know the exact URL we have stored in our database: <a name="not-exact"></a>
 
@@ -122,7 +122,7 @@ The text inside asterixes is the value that you think should be contained in the
 
 ### To find sources for a specific country: <a name="country"></a>
 
-This query will return the graphs of all the sources for the country with wikidata code Q30 (US).
+This query will return the graphs of all the sources for the country with wikidata code [Q30](https://www.wikidata.org/wiki/Q30).
 
 ```
 SELECT ?g
