@@ -1,17 +1,29 @@
 # Fuseki Starter Pack
 
 ## Table of Contents
+
 [Query Instructions](#query-inst)
+
 [Querying](#querying)
+
     [If you know the exact URL](#url-exact)
+    
     [If you don't know the exact URL](#not_exact)
+    
     [To find sources for a specific country](#country)
+    
     [To count how many sources we have](#count)
+    
 [Updating](#updating)
+
     [To insert a new entry without overwriting existing metadata](#no-overwrite)
+    
     [To automate adding sources](#automate)
+    
 [Additional Resources](#resources)
+
 [Notes](#notes)
+
 [Setup](#setup)
 
 ## Query Instructions <a name="query-inst"></a>
