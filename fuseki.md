@@ -1,6 +1,20 @@
 # Fuseki Starter Pack
 
-## Query Instructions
+## Table of Contents
+[Query Instructions](#query-inst)
+[Querying](#querying)
+    [If you know the exact URL](#url-exact)
+    [If you don't know the exact URL](#not_exact)
+    [To find sources for a specific country](#country)
+    [To count how many sources we have](#count)
+[Updating](#updating)
+    [To insert a new entry without overwriting existing metadata](#no-overwrite)
+    [To automate adding sources](#automate)
+[Additional Resources](#resources)
+[Notes](#notes)
+[Setup](#setup)
+
+## Query Instructions <a name="query-inst"></a>
 
 Datasets can be found [here](http://wwwb-db01.us.archive.org:3030/dataset.html)
 
@@ -10,11 +24,11 @@ Please only adjust the highlighted portions of the query, otherwise it is likely
 
 If you try to download all the sources in the database, the query will take a LONG time, so be sure that you really need to do this before trying it.
 
-## Querying
+## Querying <a name="querying"></a>
 
 In the SPARQL Endpoint field, type `/wn/query`
 
-### If you know the exact URL we have stored in our database: 
+### If you know the exact URL we have stored in our database: <a name="url-exact"></a>
 
 This query will return all metadata for the news source with URL `nytimes.com`. 
 
@@ -56,7 +70,7 @@ SELECT DISTINCT ?url ?country ?title ?language ?type ?description ?title_native 
 
 To add a different url, change the portion after http://. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
 
-### If you don’t know the exact URL we have stored in our database:
+### If you don’t know the exact URL we have stored in our database: <a name="not-exact"></a>
 
 If you’re looking for a URL and it’s not coming up, it may be in the database in a different form. Try using this query instead. Warning: This query is slower so only use it if the one before isn’t working:
 
@@ -94,7 +108,7 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
 ```
 The text inside asterixes is the value that you think should be contained in the url. (Running this query will show that there’s a lot of cleaning work left to be done)
 
-### To find sources for a specific country:
+### To find sources for a specific country: <a name="country"></a>
 
 This query will return the graphs of all the sources for the country with wikidata code Q30 (US).
 
@@ -106,7 +120,7 @@ SELECT ?g
 }
 ```
 
-### To count how many sources we have:
+### To count how many sources we have: <a name="count"></a>
 
 ```
 SELECT (COUNT(*) as ?count) 
@@ -116,11 +130,11 @@ WHERE
   }
  ```
  
- ## Updating
+ ## Updating <a name="updating"></a>
  
 In the SPARQL endpoint field, type: `/wn/update`
 
-### To insert a new entry without overwriting existing metadata:
+### To insert a new entry without overwriting existing metadata: <a name="no-overwrite"></a>
 
 ```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -134,11 +148,11 @@ WHERE {FILTER (NOT EXISTS {GRAPH <http://www.cnn.com> {?item wdt:P17 ?country}})
 
 You can also use this query to add additional metadata to an existing source. 
 
-### To automate adding sources:
+### To automate adding sources: <a name="automate"></a>
 
 Look at the scripts in [this](https://github.com/lsingh123/GSC2019worldnewsproject) repo, specifically `feed_fuseki.py`
 
-## Additional Resources
+## Additional Resources <a name="resources"></a>
 
 [RDF Intro](https://jena.apache.org/tutorials/rdf_api.html)
 
@@ -146,13 +160,13 @@ Look at the scripts in [this](https://github.com/lsingh123/GSC2019worldnewsproje
 
 [Wikidata Query Service](https://query.wikidata.org/) (really good resource to practice SPARQL queries)
 
-## Notes
+## Notes <a name="notes"></a>
 
 1. Each news source has its own graph (`GRAPH <http://www.nytimes.com>` for example). Within that graph there are triples of the format `ITEM PROPERTY OBJECT`. 
 2. For some countries, there was trouble finding the correct wikidata code. If I couldn't find the correct country code, I just used the name of the country (no spaces or capitalization) as the object of the country triple. If you're struggling to find news sources for a particular country, try filtering as below (replacing `country` with the country of interest) instead of looking for the exact wikidata country code:
 ` FILTER regex (str(?country), "country") `
 
-## Setup
+## Setup <a name="setup"></a>
 
 (1) The host machine must have JDK installed and set up. If JDK is already set up, then skip ahead to Step 3. To check if you have JDK, run:
 
