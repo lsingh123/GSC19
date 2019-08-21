@@ -2,8 +2,7 @@
 
 ## Query Instructions
 
-Datasets can be found here:
-http://wwwb-db01.us.archive.org:3030/dataset.html
+Datasets can be found [here](http://wwwb-db01.us.archive.org:3030/dataset.html)
 
 Please use the /wn database. The others are either empty or outdated. 
 
