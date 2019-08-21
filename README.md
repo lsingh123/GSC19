@@ -23,7 +23,7 @@ I wrote about the project's goals in a blog post that will be published on the I
 - cleaned and deduplicated this list resulting in slightly over 100,000 URLs
 - collected metadata about news source
 - set up a [database](http://wwwb-db01.us.archive.org:3030/dataset.html) to host the data
-- created a [map](https://public.tableau.com/shared/37TCY7SC4?:display_count=yes&:origin=viz_share_link) of the data
+- created a [map](https://public.tableau.com/shared/ZWMTP3CBT?:display_count=yes&:origin=viz_share_link) of the data
 
 As part of this project, I set up a local Apache Jena Fuseki databse to store the data. See my [Fuseki starter pack](https://lsingh123.github.io/gsoc19/fuseki) for more information.
 
