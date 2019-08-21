@@ -8,7 +8,7 @@
 
     a. [If you know the exact URL](#url-exact)
     
-    b. [If you don't know the exact URL](#not_exact)
+    b. [If you don't know the exact URL](#not-exact)
     
     c. [To find sources for a specific country](#country)
     
