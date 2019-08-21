@@ -4,9 +4,9 @@
 
 Datasets can be found [here](http://wwwb-db01.us.archive.org:3030/dataset.html)
 
-Please use the /wn database. The others are either empty or outdated. 
+Please use the `/wn` database. The others are either empty or outdated. 
 
-Please only adjust the highlighted portions of the query, otherwise it is likely to break. The http:// is NECESSARY before each url or your query will break. The /item after subject URIs within each graph is also necessary. 
+Please only adjust the highlighted portions of the query, otherwise it is likely to break. The `http://` is NECESSARY before each url or your query will break. The `/item` after subject URIs within each graph is also necessary. 
 
 If you try to download all the sources in the database, the query will take a LONG time, so be sure that you really need to do this before trying it.
 
