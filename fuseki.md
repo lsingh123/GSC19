@@ -76,15 +76,15 @@ In the SPARQL Endpoint field, type `/wn/query`
 
 ### If you know the exact URL we have stored in our database: 
 
-This query will return all metadata for the news source with URL <nytimes.com>. 
+This query will return all metadata for the news source with URL `nytimes.com`. 
 
 ```
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wnp: <http://worldnews/property/>
 PREFIX wni: <http://worldnews/item/>
-SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_name ?wikipedia_page ?metasource ?paywall ?path
-{ GRAPH <http://*www.nytimes.com*> {
+SELECT DISTINCT ?url ?country ?title ?language ?type ?description ?title_native ?region ?wikipedia_name ?wikipedia_page ?metasource ?paywall ?path
+{ GRAPH <http://www.nytimes.com> {
     ?item wdt:P1896 ?url .
     OPTIONAL {
       ?item wdt:P17 ?country . }
@@ -108,11 +108,13 @@ SELECT ?url ?country ?title ?language ?type ?title_native ?region ?wikipedia_nam
       ?item wnp:paywalled ?paywall .}
     OPTIONAL {
       ?item wnp:haspath ?path .}
+    OPTIONAL {
+      ?item wnp:description ?description.}
   }
 }
 ```
 
-To add a different url, change the portion inside the asterixes. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
+To add a different url, change the portion after http://. Please make sure to include http:// before the canonicalized form of the URL. If your query isn’t working, try this next one.
 
 ### If you don’t know the exact URL we have stored in our database:
 
