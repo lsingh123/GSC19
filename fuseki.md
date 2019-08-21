@@ -2,29 +2,29 @@
 
 ## Table of Contents
 
-[Query Instructions](#query-inst)
+1. [Query Instructions](#query-inst)
 
-[Querying](#querying)
+2. [Querying](#querying)
 
-    [If you know the exact URL](#url-exact)
+    a. [If you know the exact URL](#url-exact)
     
-    [If you don't know the exact URL](#not_exact)
+    b. [If you don't know the exact URL](#not_exact)
     
-    [To find sources for a specific country](#country)
+    c. [To find sources for a specific country](#country)
     
-    [To count how many sources we have](#count)
+    d. [To count how many sources we have](#count)
     
-[Updating](#updating)
+3. [Updating](#updating)
 
-    [To insert a new entry without overwriting existing metadata](#no-overwrite)
+    a. [To insert a new entry without overwriting existing metadata](#no-overwrite)
     
-    [To automate adding sources](#automate)
+    b. [To automate adding sources](#automate)
     
-[Additional Resources](#resources)
+4. [Additional Resources](#resources)
 
-[Notes](#notes)
+5. [Notes](#notes)
 
-[Setup](#setup)
+6. [Setup](#setup)
 
 ## Query Instructions <a name="query-inst"></a>
 
