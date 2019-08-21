@@ -231,7 +231,7 @@ sudo service ferm reload
 ```
 
 Additional resources:
-[Jena Documentation Download Instructions](https://jena.apache.org/download/)
+[Jena Documentation/Download Instructions](https://jena.apache.org/download/)
 
 [JDK download instructions](https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-linux-platforms.htm#JSJIG-GUID-19D58769-FD72-4353-A935-40FCD82A7A81)
 
