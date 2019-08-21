@@ -96,17 +96,12 @@ The text inside asterixes is the value that you think should be contained in the
 
 ### To find sources for a specific country:
 
-This query will return urls of all the sources for the country with wikidata code Q16 (Canada).
+This query will return the graphs of all the sources for the country with wikidata code Q30 (US).
 
 ```
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wnp: <http://worldnews/property/>
-PREFIX wni: <http://worldnews/item/>
-SELECT ?url 
+SELECT ?g
 { GRAPH ?g {
-      ?item wdt:P17 wd:*Q16* .
-      ?item wdt:1896 ?url . 
+      ?item wdt:P17 wd:Q30 .
   }
 }
 ```
