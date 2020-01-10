@@ -125,6 +125,8 @@ The text inside asterixes is the value that you think should be contained in the
 This query will return the graphs of all the sources for the country with wikidata code [Q30](https://www.wikidata.org/wiki/Q30).
 
 ```
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
 SELECT ?g
 { GRAPH ?g {
       ?item wdt:P17 wd:Q30 .
